@@ -24,13 +24,13 @@ body{
     height: 100%;
     background: var(--main-color);
     z-index: 100;
-
+    transition: width 300ms;
 }
 
 .logo{
     height: 90px;
     width: 120px;
-    padding: 1rem 0rem 1rem 2rem;
+    padding: 1rem 0rem 0rem 2rem;
     cursor: pointer;
 }
 
@@ -81,16 +81,22 @@ body{
     display: none;
 }
 
-#nav-toggle:checked+ .main-content{
-    width: 70px;
+#nav-toggle:checked ~ .main-content{
+    margin-left: 70px;
+}
+#nav-toggle:checked ~ .main-content header{
+    width: calc(100% - 70px);
+    left: 70px;
 }
 
 
 .main-content{
+    transition: margin-left 300ms;
     margin-left: 345px;
 }
 
 header{
+    background: #fff;
     display: flex;
     justify-content: space-between;
     padding: 1rem 1.5rem;
@@ -100,6 +106,7 @@ header{
     width: calc(100% - 345px);
     top: 0;
     z-index: 100;
+    transition: left 300ms;
 }
 
 
